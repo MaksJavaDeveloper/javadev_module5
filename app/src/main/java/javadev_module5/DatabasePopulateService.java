@@ -1,10 +1,9 @@
-package javadev_module4;
+package javadev_module5;
 
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class DatabasePopulateService {
 
@@ -13,8 +12,7 @@ public class DatabasePopulateService {
 
         try (Connection connection = DriverManager.getConnection("jdbc:h2:./test")) {
             String sql = FileUtils.readSQLFile(filePath);
-            Statement statement = connection.createStatement();
-            statement.execute(sql);
+            connection.prepareStatement(sql).execute();
         } catch (SQLException e) {
             e.printStackTrace();
         }

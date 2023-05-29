@@ -1,4 +1,4 @@
-package javadev_module4;
+package javadev_module5;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,7 +12,7 @@ public class DatabaseInitService {
 
         if (sql != null) {
             try (Connection connection = DriverManager.getConnection("jdbc:h2:./test")) {
-                connection.createStatement().execute(sql);
+                connection.prepareStatement(sql).execute();
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -1,6 +1,6 @@
-package javadev_module4;
+package javadev_module5;
 
-import javadev_module4.select.*;
+import javadev_module5.select.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +14,7 @@ public class DatabaseQueryService {
 
         if (sql != null) {
             try (Connection connection = DriverManager.getConnection(DATABASE_URL);
-                 Statement statement = connection.createStatement();
-                 ResultSet resultSet = statement.executeQuery(sql)) {
+                 ResultSet resultSet = connection.prepareStatement(sql).executeQuery()) {
 
                 List<MaxProjectCountClient> result = new ArrayList<>();
                 while (resultSet.next()) {
@@ -42,8 +41,7 @@ public class DatabaseQueryService {
 
         if(sql != null) {
             try(Connection connection = DriverManager.getConnection(DATABASE_URL);
-                Statement statement = connection.createStatement();
-                ResultSet resultSet = statement.executeQuery(sql)) {
+                ResultSet resultSet = connection.prepareStatement(sql).executeQuery()) {
 
                 List<FindMaxSalaryWorker> result = new ArrayList<>();
                 while (resultSet.next()) {
@@ -70,8 +68,7 @@ public class DatabaseQueryService {
 
         if(sqlFile != null) {
             try(Connection connection = DriverManager.getConnection(DATABASE_URL);
-                Statement statement = connection.createStatement();
-                ResultSet resultSet = statement.executeQuery(sqlFile)) {
+                ResultSet resultSet = connection.prepareStatement(sqlFile).executeQuery()) {
 
                     List<FindYoungestEldestWorkers> result = new ArrayList<>();
                     while(resultSet.next()) {
@@ -96,8 +93,7 @@ public class DatabaseQueryService {
 
         if(sql != null) {
             try(Connection connection = DriverManager.getConnection(DATABASE_URL);
-                Statement statement = connection.createStatement();
-                ResultSet resultSet = statement.executeQuery(sql)) {
+                ResultSet resultSet = connection.prepareStatement(sql).executeQuery()) {
 
                 List<FindLongestProject> result = new ArrayList<>();
                 while (resultSet.next()) {
@@ -121,7 +117,7 @@ public class DatabaseQueryService {
 
         if(sql != null) {
             try(Connection connection = DriverManager.getConnection(DATABASE_URL);
-                ResultSet resultSet = connection.createStatement().executeQuery(sql)) {
+                ResultSet resultSet = connection.prepareStatement(sql).executeQuery()) {
 
                 List<PrintProjectPrices> result = new ArrayList<>();
 
