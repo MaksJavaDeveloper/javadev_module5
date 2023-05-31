@@ -7,7 +7,7 @@ public class PrepareStatementTest {
 
     private static final String DATABASE_URL = "jdbc:h2:./test";
 
-    public static void insertWorker(String name, Date birthday, int level, int salary) {
+    public static void insertWorker(String name, Date birthday, String level, int salary) {
 
         String sql = "INSERT INTO worker (name, birthday, level, salary) VALUES (?, ?, ?, ?)";
 
@@ -16,7 +16,7 @@ public class PrepareStatementTest {
 
             preparedStatement.setString(1, name);
             preparedStatement.setDate(2, birthday);
-            preparedStatement.setInt(3, level);
+            preparedStatement.setString(3, level);
             preparedStatement.setInt(4, salary);
 
             preparedStatement.executeUpdate();
