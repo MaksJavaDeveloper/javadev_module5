@@ -1,0 +1,15 @@
+--Додаю 12 працівників
+INSERT INTO worker (name, birthday, level, salary)
+VALUES
+('Maxim Mikhaylov', '1997-12-15', 'Trainee', 950),
+('Kate Volkova', '1999-04-17', 'Junior', 1600),
+('Steve Jobs', '1955-02-24', 'Senior', 99999),
+('Vlad Shumko', '1992-10-14', 'Middle', 3500),
+('Evgeniy Vazko', '1985-05-12', 'Senior', 12600),
+('Alex Ivanchik', '1995-08-31', 'Middle', 5200),
+('Anatoliy Nesterov', '2000-01-12', 'Trainee', 870),
+('Anton Pokemon', '2002-10-05', 'Junior', 1850),
+('Svetlana Svetova', '1975-12-12', 'Middle', 4700),
+('Larisa Patrich', '1974-11-02', 'Senior', 25200),
+('Busya Dusya', '2001-03-12', 'Junior', 2200),
+('Vlad Mikhaylov', '1995-03-20', 'Trainee', 900);
