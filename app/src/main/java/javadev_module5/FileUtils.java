@@ -1,8 +1,13 @@
 package javadev_module5;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 
 public class FileUtils {
     public static String readSQLFile(String filePath) {
@@ -18,5 +23,11 @@ public class FileUtils {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static java.sql.Date formatDate(String date) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate localDate = LocalDate.parse(date, formatter);
+        return Date.valueOf(localDate);
     }
 }
